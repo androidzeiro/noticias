@@ -44,6 +44,7 @@ ext {
     appcompat = '1.1.0'
     retrofit = '2.6.4'
     gson = '2.8.6'
+    dagger = '2.25.2'
 
     // Androidx
     androidx_fragment = '2.2.2'
