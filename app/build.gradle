@@ -14,10 +14,11 @@ android {
 
     defaultConfig {
         applicationId "br.com.raphael.noticias"
-        minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -88,5 +89,12 @@ dependencies {
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.androidx_lifecycle"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.androidx_lifecycle"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines"
+
+    // Coil
+    implementation "io.coil-kt:coil:$rootProject.coil"
 
 }
