@@ -51,8 +51,6 @@ dependencies {
     implementation "androidx.core:core-ktx:$rootProject.androidx_core"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidx_constraint"
     implementation "androidx.legacy:legacy-support-v4:$rootProject.androidx_legacy"
-    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.androidx_lifecycle"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.androidx_lifecycle"
     implementation "androidx.multidex:multidex:$rootProject.androidx_multidex"
     testImplementation "androidx.test:core:$rootProject.androidx_test"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidx_test_ext"
@@ -75,5 +73,15 @@ dependencies {
     // Dagger
     implementation "com.google.dagger:dagger:$rootProject.dagger"
     kapt "com.google.dagger:dagger-compiler:$rootProject.dagger"
+
+    // OKHTTP3
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp"
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$rootProject.anko"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.androidx_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.androidx_lifecycle"
 
 }

@@ -45,6 +45,9 @@ ext {
     retrofit = '2.6.4'
     gson = '2.8.6'
     dagger = '2.25.2'
+    okhttp = '3.12.6'
+    anko = '0.10.1'
+
 
     // Androidx
     androidx_fragment = '2.2.2'

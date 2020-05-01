@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-
 import br.com.raphael.noticias.R
+import br.com.raphael.noticias.viewmodel.DetalhesViewModel
 
 class DetalhesFragment : Fragment() {
 
-    private val viewModel: DetalhesFragment by viewModels()
+    private val viewModel: DetalhesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
