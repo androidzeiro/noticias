@@ -64,4 +64,12 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.androidx_fragment"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.androidx_ui"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$rootProject.gson"
+
 }
