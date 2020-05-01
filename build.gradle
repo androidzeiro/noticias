@@ -49,6 +49,7 @@ ext {
     anko = '0.10.1'
     coroutines = '1.3.3'
     coil = '0.10.1'
+    sweet_alert = '1.5.1'
 
     // Androidx
     androidx_fragment = '2.2.2'

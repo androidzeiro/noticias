@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Noticias</string>
+    <string name="atencao" />
+    <string name="ok" />
+    <string name="msg_user_obrigatorio">O preenchimento do User é obrigatório</string>
+    <string name="msg_password_obrigatorio">O preenchimento do Password é obrigatório</string>
 </resources>

@@ -97,4 +97,7 @@ dependencies {
     // Coil
     implementation "io.coil-kt:coil:$rootProject.coil"
 
+    // Sweet Alert Dialog
+    implementation "com.github.f0ris.sweetalert:library:$rootProject.sweet_alert"
+
 }
