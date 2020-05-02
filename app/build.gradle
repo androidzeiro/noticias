@@ -100,4 +100,45 @@ dependencies {
     // Sweet Alert Dialog
     implementation "com.github.f0ris.sweetalert:library:$rootProject.sweet_alert"
 
+    // Tests
+    testImplementation "junit:junit:$rootProject.junit"
+    testImplementation "androidx.test:core:$rootProject.android_test"
+    testImplementation "com.google.truth:truth:$rootProject.truth"
+    androidTestImplementation ("com.google.truth:truth:$rootProject.truth") {
+        exclude group: "org.checkerframework", module: "checker-compat-qual"
+        exclude group: "com.google.errorprone", module: "error_prone_annotations"
+    }
+    testImplementation "org.robolectric:robolectric:$rootProject.robolectric"
+
+    // Mockito
+    testImplementation "org.mockito:mockito-core:$rootProject.mockito"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$rootProject.mockito_kotlin"
+    androidTestImplementation "org.mockito:mockito-android:$rootProject.mockito"
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$rootProject.mockito_kotlin"
+
+    //Core Library
+    androidTestImplementation "android.arch.core:core-testing:$rootProject.arch_core"
+    testImplementation "android.arch.core:core-testing:$rootProject.arch_core"
+
+    //JUnitRunner and JUnitRules
+    androidTestImplementation "androidx.test:runner:$rootProject.android_test"
+    androidTestImplementation "androidx.test:rules:$rootProject.android_test"
+
+    //Assertions
+    androidTestImplementation ("androidx.test.ext:truth:$rootProject.android_test") {
+        exclude group: "com.google.truth", module: "truth"
+    }
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.espresso_runner"
+    androidTestImplementation "androidx.test:monitor:$rootProject.android_test"
+
+    //Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-accessibility:$rootProject.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-web:$rootProject.espresso"
+    androidTestImplementation "androidx.test.espresso.idling:idling-concurrent:$rootProject.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.espresso"
+
+    debugImplementation "androidx.fragment:fragment-testing:$rootProject.android_fragment"
+
 }

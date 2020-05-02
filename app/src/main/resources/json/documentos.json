@@ -1,0 +1,34 @@
+[
+  {
+    "id_documento": "1",
+    "chapeu": "Política",
+    "titulo": "Antes de demissão, secretário de Covas enfrentou pressão por segurar gastos de secretarias",
+    "linha_fina": "Mauro Ricardo fez pastas segurarem orçamento para ano eleitoral, mas, com pandemia de covid-19, investimentos não foram feitos",
+    "data_hora_publicacao": "2020-04-23 16:57:00",
+    "url": "https://politica.estadao.com.br/noticias/geral,antes-de-demissao-secretario-de-covas-enfrentou-pressao-por-segurar-gastos-de-secretarias,70003280555",
+    "imagem": "https://img.estadao.com.br/resources/jpg/2/4/1545959783142.jpg",
+    "source": "O Estado de S.Paulo"
+  },
+  {
+    "id_documento": "2",
+    "chapeu": "Política",
+    "titulo": "Sem acordo, Câmara Municipal adia votação para reduzir salários de vereadores",
+    "linha_fina": "Projeto que transfere recursos para o combate ao coronavírus é motivo de bate-boca até em grupos de WhatsApp",
+    "data_hora_publicacao": "2020-04-23 18:23:00",
+    "url": "https://politica.estadao.com.br/noticias/geral,sem-acordo-camara-municipal-adia-votacao-para-reduzir-salarios-de-vereadores,70003280728",
+    "imagem": "https://img.estadao.com.br/resources/jpg/9/2/1419025977029.jpg",
+    "source": "O Estado de S.Paulo"
+  },
+  {
+    "id_documento": "3",
+    "chapeu": "Política",
+    "titulo": "Quem é Maurício Valeixo, delegado da Polícia Federal pivô da ameaça de demissão de Sérgio Moro",
+    "linha_fina": "Especialista em inteligência e combate ao narcotráfico, Maurício Leite Valeixo, diretor-geral da Polícia Federal, mantém relação de longa data com ministro Sergio Moro",
+    "data_hora_publicacao": "2020-04-23 17:23:00",
+    "credito": "Ricardo Brandt, Fausto Macedo e Julia Affonso",
+    "url": "https://politica.estadao.com.br/noticias/geral,quem-e-mauricio-valeixo-delegado-da-policia-federal-pivo-da-ameaca-de-demissao-de-sergio-moro,70003280612",
+    "imagem": "https://img.estadao.com.br/resources/jpg/0/8/1568342577880.jpg",
+    "imagem_credito": "Denis Ferreira Netto/ESTADÃO",
+    "source": "O Estado de S.Paulo"
+  }
+]
