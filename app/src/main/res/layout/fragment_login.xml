@@ -27,9 +27,10 @@
                 app:srcCompat="@drawable/logo" />
 
             <com.google.android.material.textfield.TextInputLayout
+                style="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/til_user"
                 android:layout_marginTop="80dp"
-                android:hint="User"
+                android:hint="@string/usuario"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -49,10 +50,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                style="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/til_password"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Pass"
+                android:hint="@string/senha"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -91,7 +93,7 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="50dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

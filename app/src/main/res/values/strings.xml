@@ -2,6 +2,9 @@
     <string name="app_name">Noticias</string>
     <string name="atencao" />
     <string name="ok" />
-    <string name="msg_user_obrigatorio">O preenchimento do User é obrigatório</string>
-    <string name="msg_password_obrigatorio">O preenchimento do Password é obrigatório</string>
+    <string name="msg_user_obrigatorio">O preenchimento do usuário é obrigatório</string>
+    <string name="msg_password_obrigatorio">O preenchimento do senha é obrigatório</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="usuario_senha_invalida">Usuário ou senha inválida</string>
 </resources>

@@ -11,6 +11,7 @@ import br.com.raphael.noticias.R
 import br.com.raphael.noticias.model.FieldError
 import br.com.raphael.noticias.repository.BackendRepository
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import javax.inject.Inject
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
@@ -58,18 +59,26 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
             viewModelScope.launch {
                 try {
                     _loading.postValue(true)
-                    backendRepository.postLoginAsync(_user.value!!, _password.value!!)
+                    val response = backendRepository.postLoginAsync(_user.value!!, _password.value!!)
                     _success.postValue(true)
-//                        preferences.edit()
-//                            .putString("name", response.userAccount.name)
-//                            .putString("agency", response.userAccount.agency)
-//                            .putString("bankAccount", response.userAccount.bankAccount)
-//                            .apply()
+                        preferences.edit()
+                            .putString("token", response.token)
+                            .apply()
 
                     _loading.postValue(false)
                 } catch (e: Exception) {
-                    _error.postValue(e.toString())
                     _loading.postValue(false)
+                    _error.postValue(
+                        when (e) {
+                            e as HttpException -> {
+                                when(e.code()) {
+                                    401 -> getApplication<App>().applicationContext.getString(R.string.usuario_senha_invalida)
+                                    else -> e.toString()
+                                }
+                            }
+                            else -> e.toString()
+                        }
+                    )
                 }
             }
         }

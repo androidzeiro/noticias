@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import br.com.raphael.noticias.R
 import br.com.raphael.noticias.viewmodel.DetalhesViewModel
 import cn.pedant.SweetAlert.SweetAlertDialog
@@ -14,6 +15,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 class DetalhesFragment : Fragment() {
 
     private val viewModel: DetalhesViewModel by viewModels()
+    private val args: DetalhesFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +29,8 @@ class DetalhesFragment : Fragment() {
         observerSuccess()
         observerError()
         observerLoading()
+
+        viewModel.getDocumento(args.id)
     }
 
     private fun observerSuccess() {

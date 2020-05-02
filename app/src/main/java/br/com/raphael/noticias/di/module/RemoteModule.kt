@@ -1,5 +1,6 @@
 package br.com.raphael.noticias.di.module
 
+import br.com.raphael.noticias.remote.util.AuthInterceptor
 import br.com.raphael.noticias.remote.util.PrintingEventListener
 import dagger.Module
 import dagger.Provides
@@ -29,7 +30,9 @@ open class RemoteModule {
     @Provides
     @Singleton
     open fun provideOkHttp(
-        builder: OkHttpClient.Builder, logging: HttpLoggingInterceptor
+        builder: OkHttpClient.Builder,
+        logging: HttpLoggingInterceptor,
+        authInterceptor: AuthInterceptor
     ): OkHttpClient {
 
         val b = builder
@@ -41,6 +44,7 @@ open class RemoteModule {
             chain.proceed(requestBuilder.build())
         }
             .addInterceptor(logging)
+            .addInterceptor(authInterceptor)
             .build()
     }
 

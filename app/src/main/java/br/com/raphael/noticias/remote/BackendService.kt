@@ -20,5 +20,5 @@ interface BackendService {
     @GET("news/{id}")
     suspend fun getDocumento(
         @Path("id") id: String
-    ): Response
+    ): List<Response>
 }

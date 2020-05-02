@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="br.com.raphael.noticias.ui.LoginFragment"
-        android:label="LoginFragment"
+        android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_listagemFragment"
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/listagemFragment"
         android:name="br.com.raphael.noticias.ui.ListagemFragment"
-        android:label="fragment_listagem"
-        tools:layout="@layout/fragment_listagem" >
+        android:label="Notícias"
+        tools:layout="@layout/fragment_listagem">
         <action
             android:id="@+id/action_listagemFragment_to_detalhesFragment"
             app:destination="@id/detalhesFragment" />
@@ -26,8 +26,8 @@
     <fragment
         android:id="@+id/detalhesFragment"
         android:name="br.com.raphael.noticias.ui.DetalhesFragment"
-        android:label="fragment_detalhes"
-        tools:layout="@layout/fragment_detalhes" >
+        android:label="Detalhes"
+        tools:layout="@layout/fragment_detalhes">
         <argument
             android:name="id"
             app:argType="string" />

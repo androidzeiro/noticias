@@ -30,6 +30,7 @@ class ListagemViewModel(application: Application) : AndroidViewModel(application
 
     init {
         getApplication<App>().component.inject(this)
+        getDocumentos()
     }
 
     fun getDocumentos() {

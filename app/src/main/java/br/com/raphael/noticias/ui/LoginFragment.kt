@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import br.com.raphael.noticias.R
 import br.com.raphael.noticias.viewmodel.LoginViewModel
 import cn.pedant.SweetAlert.SweetAlertDialog
@@ -65,7 +67,9 @@ class LoginFragment : Fragment() {
 
     private fun observerSuccess() {
         viewModel.success.observe(viewLifecycleOwner, Observer {
-
+            val action =
+                LoginFragmentDirections.actionLoginFragmentToListagemFragment()
+            view?.findNavController()?.navigate(action)
         })
     }
 
@@ -77,20 +81,22 @@ class LoginFragment : Fragment() {
                     .setContentText(it)
                     .setConfirmText(getString(R.string.ok))
                     .show()
+
+                btn_login.isVisible = true
             }
         })
     }
 
     private fun observerLoading() {
         viewModel.loading.observe(viewLifecycleOwner, Observer {
-            //pb_carregando.isVisible = it
+            pb_loading.isVisible = it
         })
     }
 
     private fun login(){
-        btn_login.isEnabled = false
+        btn_login.isVisible = false
         viewModel.postLogin().forEach { fieldError ->
-            btn_login.isEnabled = true
+            btn_login.isVisible = true
             when (fieldError.fieldId) {
                 R.id.til_user -> {
                     tie_user.error = getString(fieldError.errorStringResourceId)

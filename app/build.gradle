@@ -141,4 +141,8 @@ dependencies {
 
     debugImplementation "androidx.fragment:fragment-testing:$rootProject.android_fragment"
 
+    // Multidex
+    implementation "com.android.support:multidex:$rootProject.multidex"
+
+
 }
