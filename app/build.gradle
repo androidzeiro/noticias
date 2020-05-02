@@ -20,7 +20,7 @@ android {
         versionName rootProject.ext.versionName
         multiDexEnabled true
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "br.com.raphael.noticias.androidtest.TestRunner"
     }
 
     buildTypes {
