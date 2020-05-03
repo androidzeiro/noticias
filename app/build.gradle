@@ -34,7 +34,10 @@ android {
             buildConfigField 'String', 'BASE_URL', BaseUrl
         }
     }
-
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8

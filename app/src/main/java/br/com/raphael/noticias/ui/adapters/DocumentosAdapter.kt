@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.raphael.noticias.R
@@ -37,6 +39,9 @@ class DocumentosAdapter(
                 }
             }
 
+            holder.chapeu.text = item.chapeu
+            holder.titulo.text = item.titulo
+
             holder.container.setOnClickListener {
                 onDocumentoClicked.invoke(item)
             }
@@ -45,7 +50,9 @@ class DocumentosAdapter(
     }
 
     private class DocumentosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val container: ConstraintLayout by lazy { itemView.cl_container }
+        val container: LinearLayout by lazy { itemView.cl_container }
         val imagem: ImageView by lazy { itemView.iv_capa }
+        val chapeu: TextView by lazy { itemView.tv_chapeu }
+        val titulo: TextView by lazy { itemView.tv_titulo }
     }
 }
