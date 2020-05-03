@@ -36,7 +36,7 @@ class DetalhesViewModel(application: Application) : AndroidViewModel(application
             try {
                 _loading.postValue(true)
                 val response = backendRepository.getDocumentoAsync(id = id)
-                _success.postValue(response[0].detalhes)
+                _success.postValue(response[0].documento)
                 _loading.postValue(false)
             } catch (e: Exception) {
                 _error.postValue(e.toString())
