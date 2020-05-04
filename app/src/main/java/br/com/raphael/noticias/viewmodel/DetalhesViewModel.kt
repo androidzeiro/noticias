@@ -1,11 +1,13 @@
 package br.com.raphael.noticias.viewmodel
 
 import android.app.Application
+import android.content.res.Resources
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import br.com.raphael.noticias.App
+import br.com.raphael.noticias.R
 import br.com.raphael.noticias.model.DocumentoDetalhes
 import br.com.raphael.noticias.repository.BackendRepository
 import kotlinx.coroutines.launch
@@ -26,6 +28,8 @@ class DetalhesViewModel(application: Application) : AndroidViewModel(application
 
     @Inject
     lateinit var backendRepository: BackendRepository
+    @Inject
+    lateinit var resources: Resources
 
     init {
         getApplication<App>().component.inject(this)
@@ -39,7 +43,7 @@ class DetalhesViewModel(application: Application) : AndroidViewModel(application
                 _success.postValue(response[0].documento)
                 _loading.postValue(false)
             } catch (e: Exception) {
-                _error.postValue(e.toString())
+                _error.postValue(resources.getString(R.string.msg_erro_http))
             }
         }
     }
