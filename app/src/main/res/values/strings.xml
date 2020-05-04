@@ -7,4 +7,6 @@
     <string name="usuario">Usuário</string>
     <string name="senha">Senha</string>
     <string name="usuario_senha_invalida">Usuário ou senha inválida</string>
+    <string name="msg_erro_http">Ocorreu um erro inesperado, tente novamente em alguns instantes.\n</string>
+
 </resources>

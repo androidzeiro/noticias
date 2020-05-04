@@ -29,7 +29,7 @@ open class BackendModuleTest : BackendModule() {
 
         // getDocumento(any)
         on {
-            runBlocking { getDocumentos() }
+            runBlocking { getDocumento(any()) }
         } doReturn readJSON("documento")
     }
 

@@ -2,6 +2,7 @@ package br.com.raphael.noticias.viewmodel
 
 import android.app.Application
 import android.content.SharedPreferences
+import android.content.res.Resources
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -45,10 +46,10 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     @Inject
     lateinit var backendRepository: BackendRepository
-
     @Inject
     lateinit var preferences: SharedPreferences
-
+    @Inject
+    lateinit var resources: Resources
     init {
         getApplication<App>().component.inject(this)
     }
@@ -70,13 +71,13 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
                     _loading.postValue(false)
                     _error.postValue(
                         when (e) {
-                            e as HttpException -> {
+                            e as? HttpException -> {
                                 when(e.code()) {
-                                    401 -> getApplication<App>().applicationContext.getString(R.string.usuario_senha_invalida)
-                                    else -> e.toString()
+                                    401 -> resources.getString(R.string.usuario_senha_invalida)
+                                    else -> resources.getString(R.string.msg_erro_http)
                                 }
                             }
-                            else -> e.toString()
+                            else -> resources.getString(R.string.msg_erro_http)
                         }
                     )
                 }

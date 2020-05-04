@@ -2,6 +2,7 @@ package br.com.raphael.noticias.module
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Resources
 import br.com.raphael.noticias.App
 import br.com.raphael.noticias.di.module.AppModule
 import com.nhaarman.mockitokotlin2.any
@@ -17,4 +18,7 @@ class AppModuleTest(app: App) : AppModule(app) {
 
     override fun provideSharedPreferences(): SharedPreferences = Mockito.mock(SharedPreferences::class.java)
 
+    override fun provideResources() = mock<Resources> {
+        on { getString(any()) } doReturn ""
+    }
 }

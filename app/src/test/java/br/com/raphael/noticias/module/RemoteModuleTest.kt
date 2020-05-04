@@ -1,6 +1,7 @@
 package br.com.raphael.noticias.module
 
 import br.com.raphael.noticias.di.module.RemoteModule
+import br.com.raphael.noticias.remote.util.AuthInterceptor
 import br.com.raphael.noticias.remote.util.PrintingEventListener
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
@@ -24,7 +25,8 @@ class RemoteModuleTest() : RemoteModule() {
 
     override fun provideOkHttp(
         builder: OkHttpClient.Builder,
-        logging: HttpLoggingInterceptor
+        logging: HttpLoggingInterceptor,
+        authInterceptor: AuthInterceptor
     ): OkHttpClient = builder.build()
 
 }
