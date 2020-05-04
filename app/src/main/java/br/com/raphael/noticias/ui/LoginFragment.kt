@@ -104,9 +104,7 @@ class LoginFragment : Fragment() {
                 R.id.til_password -> {
                     tie_password.error = getString(fieldError.errorStringResourceId)
                 }
-
             }
         }
     }
-
 }

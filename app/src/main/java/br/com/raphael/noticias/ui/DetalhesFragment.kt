@@ -32,7 +32,6 @@ class DetalhesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observerSuccess()
         observerError()
-        observerLoading()
 
         viewModel.getDocumento(args.id)
     }
@@ -49,17 +48,12 @@ class DetalhesFragment : Fragment() {
             }
 
             tv_titulo.text = it.titulo
-
-            val wedData: String =  it.corpoformatado
-            val mimeType = "text/html"
-            val utfType = "UTF-8"
             tv_descricao.loadData(dataCSS(it.corpoformatado), "text/html", "ISO-8859-1")
             tv_descricao.setBackgroundColor(Color.TRANSPARENT)
         })
     }
 
     fun dataCSS(content: String) : String {
-
         var resultado = """<style>
                 html, body {
                     overflow-x: hidden !important;
@@ -72,6 +66,7 @@ class DetalhesFragment : Fragment() {
                    text-align: left !important;
                    line-height:25px!important;
                 }
+                img{display: inline;height: auto;max-width: 100%;}
                 </style>""" +
                 content
 
@@ -90,12 +85,6 @@ class DetalhesFragment : Fragment() {
                     .setConfirmText(getString(R.string.ok))
                     .show()
             }
-        })
-    }
-
-    private fun observerLoading() {
-        viewModel.loading.observe(viewLifecycleOwner, Observer {
-            //pb_carregando.isVisible = it
         })
     }
 }

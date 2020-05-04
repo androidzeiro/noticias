@@ -22,6 +22,22 @@ class ListagemViewModelTest : BaseTest() {
     }
 
     @Test
+    fun `Testar erro getEventos`() = runBlocking {
+
+        // Configurar Mockito
+        Mockito.`when`(listagemViewModel.backendRepository.getDocumentosAsync()).thenThrow(
+            FakeHttpException()
+        )
+        Mockito.`when`(listagemViewModel.resources.getString(any())).thenReturn(context.getString(R.string.msg_erro_http))
+
+        listagemViewModel.getDocumentos()
+
+        listagemViewModel.error.observeForever {
+            assertEquals(context.getString(R.string.msg_erro_http), it)
+        }
+    }
+
+    @Test
     fun `Testar retorno getEventos`() = runBlocking {
 
         listagemViewModel.success.observeForever {
@@ -36,22 +52,6 @@ class ListagemViewModelTest : BaseTest() {
             assertEquals("Política", it[0].chapeu)
             assertEquals("https://img.estadao.com.br/resources/jpg/2/4/1545959783142.jpg", it[0].imagem)
             assertEquals("Antes de demissão, secretário de Covas enfrentou pressão por segurar gastos de secretarias", it[0].titulo)
-        }
-    }
-
-    @Test
-    fun `Testar erro getEventos`() = runBlocking {
-
-        // Configurar Mockito
-        Mockito.`when`(listagemViewModel.backendRepository.getDocumentosAsync()).thenThrow(
-            FakeHttpException()
-        )
-        Mockito.`when`(listagemViewModel.resources.getString(any())).thenReturn(context.getString(R.string.msg_erro_http))
-
-        listagemViewModel.getDocumentos()
-
-        listagemViewModel.error.observeForever {
-            assertEquals(context.getString(R.string.msg_erro_http), it)
         }
     }
 }

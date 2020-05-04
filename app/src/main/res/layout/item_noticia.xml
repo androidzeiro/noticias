@@ -15,29 +15,30 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/azul"
+        tools:text="TextView" />
 
     <ImageView
         android:id="@+id/iv_capa"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="w,21:9"
-        tools:srcCompat="@drawable/logo" />
+        tools:srcCompat="@drawable/logo"/>
 
     <TextView
         android:id="@+id/tv_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="TextView" />
 
 </LinearLayout>

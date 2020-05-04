@@ -22,10 +22,6 @@ class DetalhesViewModel(application: Application) : AndroidViewModel(application
     val success: MutableLiveData<DocumentoDetalhes>
         get() = _success
 
-    private val _loading = MutableLiveData<Boolean>()
-    val loading: LiveData<Boolean>
-        get() = _loading
-
     @Inject
     lateinit var backendRepository: BackendRepository
     @Inject
@@ -38,10 +34,8 @@ class DetalhesViewModel(application: Application) : AndroidViewModel(application
     fun getDocumento(id: String) {
         viewModelScope.launch {
             try {
-                _loading.postValue(true)
                 val response = backendRepository.getDocumentoAsync(id = id)
                 _success.postValue(response[0].documento)
-                _loading.postValue(false)
             } catch (e: Exception) {
                 _error.postValue(resources.getString(R.string.msg_erro_http))
             }

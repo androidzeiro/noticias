@@ -18,23 +18,26 @@
 
             <ImageView
                 android:id="@+id/iv_logo"
-                android:layout_width="125dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="32dp"
+                android:adjustViewBounds="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo" />
 
             <com.google.android.material.textfield.TextInputLayout
-                style="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/til_user"
-                android:layout_marginTop="80dp"
-                android:hint="@string/usuario"
+                style="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="80dp"
                 android:layout_marginEnd="16dp"
+                android:hint="@string/usuario"
                 app:layout_constraintBottom_toTopOf="@+id/til_password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +47,8 @@
                     android:id="@+id/tie_user"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:singleLine="true"
-                    android:imeOptions="actionNext" />
+                    android:imeOptions="actionNext"
+                    android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -50,6 +50,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
     lateinit var preferences: SharedPreferences
     @Inject
     lateinit var resources: Resources
+
     init {
         getApplication<App>().component.inject(this)
     }

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.raphael.noticias.R
 import br.com.raphael.noticias.model.Documento
@@ -30,6 +29,7 @@ class DocumentosAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (holder is DocumentosViewHolder) {
             val item = items[position]
+
             if (item.imagem.isNotEmpty()) {
                 holder.imagem.load(item.imagem) {
                     crossfade(750)
